@@ -52,6 +52,7 @@ class SslErrorDialog;
  * @brief The Application class
  * @ingroup gui
  */
+
 class Application : public SharedTools::QtSingleApplication
 {
     Q_OBJECT
@@ -149,5 +150,11 @@ private:
 };
 
 } // namespace OCC
+
+
+inline OCC::Application *ocApp()
+{
+    return qobject_cast<OCC::Application*>(qApp);
+}
 
 #endif // APPLICATION_H

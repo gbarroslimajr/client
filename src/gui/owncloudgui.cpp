@@ -1055,10 +1055,11 @@ void ownCloudGui::slotHelp()
 
 void ownCloudGui::raiseDialog(QWidget *raiseWidget)
 {
-    auto window = raiseWidget->window();
+    auto window = ocApp()->gui()->settingsDialog();
     Q_ASSERT(window);
     window->showNormal();
     window->raise();
+    raiseWidget->raise();
     window->activateWindow();
 
 #if defined(Q_OS_WIN)
